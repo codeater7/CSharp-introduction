@@ -50,15 +50,13 @@ namespace Learning.CSharp
             // Declare a variable using <type> <name>
             ///////////////////////////////////////////////////
 
-            //Sbyte = ( -127 : 127)    Signed //( Startign with S is smaller)
+            //Sbyte = ( -127 : 127)    Signed //( Startign with S is smaller) // Natra longer
             // 
 
-            // Sbyte - Signed 8-bit integer
-            // (-128 <= sbyte <= 127)
+            // Sbyte - Signed 8-bit integer // (-128 <= sbyte <= 127)
             sbyte fooSbyte = 100;
 
-            // Byte - Unsigned 8-bit integer
-            // (0 <= byte <= 255)
+            // Byte - Unsigned 8-bit integer // (0 <= byte <= 255)
             byte fooByte = 100;
 
             // Short - 16-bit integer
@@ -77,10 +75,10 @@ namespace Learning.CSharp
             // Numbers default to being int or uint depending on size.
             // L is used to denote that this variable value is of type long or ulong
 
-            // Double - Double-precision 64-bit IEEE 754 Floating Point
+            // Double - Double-precision 64-bit IEEE 754 Floating Point    Double => Double Precision
             double fooDouble = 123.4; // Precision: 15-16 digits
 
-            // Float - Single-precision 32-bit IEEE 754 Floating Point
+            // Float - Single-precision 32-bit IEEE 754 Floating Point      FLoat => Single Precision
             float fooFloat = 234.5f; // Precision: 7 digits
             // f is used to denote that this variable value is of type float
 
@@ -104,7 +102,13 @@ namespace Learning.CSharp
             // Strings are immutable: you can't do fooString[1] = 'X';
 
             // Compare strings with current culture, ignoring case
-            string.Compare(fooString, "x", StringComparison.CurrentCultureIgnoreCase);
+            string.Compare(fooString, "x", StringComparison.CurrentCultureIgnoreCase);    // ignore the case
+
+
+            // 1) string.Compare( kun string, )
+            // 2) string.Format( )
+
+            // Date.ToString("hh:mm, dd MM yyyy")
 
             // Formatting, based on sprintf
             string fooFs = string.Format("Check Check, {0} {1}, {0} {1:0.0}", 1, 2);
@@ -116,7 +120,7 @@ namespace Learning.CSharp
             // Verbatim String
             // You can use the @ symbol before a string literal to escape all characters in the string
             string path = "C:\\Users\\User\\Desktop";
-            string verbatimPath = @"C:\Users\User\Desktop";
+            string verbatimPath = @"C:\Users\User\Desktop";         // @
             Console.WriteLine(path == verbatimPath);  // => true
 
             // You can split a string over two lines with the @ symbol. To escape " use ""
@@ -137,21 +141,25 @@ on a new line! ""Wow!"", the masses cried";
             // <datatype>[] <var name> = new <datatype>[<array size>];
             int[] intArray = new int[10];
 
+  
             // Another way to declare & initialize an array
-            int[] y = { 9000, 1000, 1337 };
+            int[] y = { 9000, 1000, 1337 };                         // Why { }; when it is Array ?? 
 
             // Indexing an array - Accessing an element
             Console.WriteLine("intArray @ 0: " + intArray[0]);
+            
             // Arrays are mutable.
             intArray[1] = 1;
 
+   
             // Lists
-            // Lists are used more frequently than arrays as they are more flexible
+            // Lists are used more frequently than arrays as they are more flexible.
             // The format for declaring a list is follows:
-            // List<datatype> <var name> = new List<datatype>();
+            // List<datatype> <var name> = new List<datatype>();       
+
             List<int> intList = new List<int>();
             List<string> stringList = new List<string>();
-            List<int> z = new List<int> { 9000, 1000, 1337 }; // initialize
+            List<int> z = new List<int> { 9000, 1000, 1337 }; // initialize   
             // The <> are for generics - Check out the cool stuff section
 
             // Lists don't default to a value;
@@ -193,7 +201,7 @@ on a new line! ""Wow!"", the masses cried";
             <<      Signed left shift
             >>      Signed right shift
             &       Bitwise AND
-            ^       Bitwise exclusive OR
+            ^       Bitwise exclusive OR 
             |       Bitwise inclusive OR
             */
 
@@ -264,7 +272,8 @@ on a new line! ""Wow!"", the masses cried";
             // foreach loop structure => foreach(<iteratorType> <iteratorName> in <enumerable>)
             // The foreach loop loops over any object implementing IEnumerable or IEnumerable<T>
             // All the collection types (Array, List, Dictionary...) in the .Net framework
-            // implement one or both of these interfaces.
+            // implement one or both of these interfaces.                                      ( IEnumerable or IEnumerable<T> ( Can I say, Iterable))
+
             // (The ToCharArray() could be removed, because a string also implements IEnumerable)
             foreach (char character in "Hello World".ToCharArray())
             {
@@ -273,7 +282,7 @@ on a new line! ""Wow!"", the masses cried";
 
             // Switch Case
             // A switch works with the byte, short, char, and int data types.
-            // It also works with enumerated types (discussed in Enum Types),
+            // It also works with enumerated types (discussed in Enum Types),     ENUM  => Enumerated types
             // the String class, and a few special classes that wrap
             // primitive types: Character, Byte, Short, and Integer.
             int month = 3;
@@ -304,12 +313,17 @@ on a new line! ""Wow!"", the masses cried";
 
             ///////////////////////////////////////
             // Converting Data Types And Typecasting
+
+            int.Parse('123')
+            TryParse()
+            Convert.ToString(123)
+            12.ToString()
+
             ///////////////////////////////////////
 
             // Converting data
 
-            // Convert String To Integer
-            // this will throw a FormatException on failure
+            // Convert String To Integer     =>  this will throw a FormatException on failure
             int.Parse("123"); // returns an integer version of "123"
 
             // try parse will default to type default on failure
@@ -332,6 +346,7 @@ on a new line! ""Wow!"", the masses cried";
 
         ///////////////////////////////////////
         // CLASSES - see definitions at end of file
+
         ///////////////////////////////////////
         public static void Classes()
         {
@@ -341,7 +356,7 @@ on a new line! ""Wow!"", the masses cried";
             Bicycle trek = new Bicycle();
 
             // Call object methods
-            trek.SpeedUp(3); // You should always use setter and getter methods
+            trek.SpeedUp(3);   // You should always use setter and getter methods
             trek.Cadence = 100;
 
             // ToString is a convention to display the value of this Object.
@@ -370,10 +385,10 @@ on a new line! ""Wow!"", the masses cried";
         static // Allows for direct call on class without object
         int // Return Type,
         MethodSignatures(
-            int maxCount, // First variable, expects an int
-            int count = 0, // will default the value to 0 if not passed in
+            int maxCount,       // First variable, expects an int
+            int count = 0,       // will default the value to 0 if not passed in
             int another = 3,
-            params string[] otherParams // captures all other parameters passed to method
+            params string[] otherParams      // captures all other parameters passed to method            // INTERESTING FEATURE
         )
         {
             return -1;
@@ -382,12 +397,18 @@ on a new line! ""Wow!"", the masses cried";
         // Methods can have the same name, as long as the signature is unique
         // A method that differs only in return type is not unique
         public static void MethodSignatures(
-            ref int maxCount, // Pass by reference
+            ref int maxCount,  // Pass by reference
             out int count)
         {
             // the argument passed in as 'count' will hold the value of 15 outside of this function
             count = 15; // out param must be assigned before control leaves the method
         }
+
+          public static void MethodSignatures( ref int maxCount,  out int count){
+          count = 15; 
+        }
+
+
 
         // GENERICS
         // The classes for TKey and TValue is specified by the user calling this function.
@@ -398,10 +419,12 @@ on a new line! ""Wow!"", the masses cried";
             TValue defaultItem)
         {
             TValue result;
-            if (!dictionary.TryGetValue(key, out result))
+            if (!dictionary.TryGetValue(key, out result))                // Bhujina ******
+                                                                // dictionary has TryGetValue()
                 return dictionary[key] = defaultItem;
             return result;
         }
+        
 
         // You can narrow down the objects that are passed in
         public static void IterateAndPrint<T>(T toPrint) where T: IEnumerable<int>
@@ -415,7 +438,7 @@ on a new line! ""Wow!"", the masses cried";
         // YIELD
         // Usage of the "yield" keyword indicates that the method it appears in is an Iterator
         // (this means you can use it in a foreach loop)
-        public static IEnumerable<int> YieldCounter(int limit = 10)
+        public static IEnumerable<int> YieldCounter(int limit = 10) 
         {
             for (var i = 0; i < limit; i++)
                 yield return i;
@@ -455,7 +478,7 @@ on a new line! ""Wow!"", the masses cried";
             MethodSignatures(3, another: 3); // explicitly set a parameter, skipping optional ones
 
             // BY REF AND OUT PARAMETERS
-            int maxCount = 0, count; // ref params must have value
+            int maxCount = 0, count;                                // ref params must have value
             MethodSignatures(ref maxCount, out count);
 
             // EXTENSION METHODS
@@ -467,7 +490,7 @@ on a new line! ""Wow!"", the masses cried";
             // <type>? <var name> = <value>
             int? nullable = null; // short hand for Nullable<int>
             Console.WriteLine("Nullable variable: " + nullable);
-            bool hasValue = nullable.HasValue; // true if not null
+            bool hasValue = nullable.HasValue;                               // true if not null   nullable.HasValue
 
             // ?? is syntactic sugar for specifying default value (coalesce)
             // in case variable is null
